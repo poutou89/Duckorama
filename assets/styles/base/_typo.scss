@@ -1,0 +1,11 @@
+@use "../base/variables" as v;
+
+@font-face {
+    font-family: v.$font-text;
+    src: url('/public/build/fonts/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: v.$font-titre;
+    src: url('/public/build/fonts/FascinateInline/FascinateInline-Regular.ttf');
+}

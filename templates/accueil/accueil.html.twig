@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+<main id="home">
+    <div class="container">
+        <h1><span>DUCK</span>ORAMA, Le Paradis Du <span>Canard</span></h1>
+        <p>Vous ? ici ? par <span>coin</span>cidence ? Je ne crois pas ! Ici, pas de <span>canards</span> sauvages… que des stars de baignoire ! Oubliez les <span>canards</span> ordinaires… ici, c'est le top du <span>coin-coin</span> chic ! Attention, risque élevé de <span>Coin-Coin</span>fection !</p>
+
+        <h3>Voici nos plus récents <span>canards</span> :</h3>
+    </div>
+    <div class="canards-liste">
+    {% for canard in lastCanards %}
+    <a href="{{ path('canard_show', {'id': canard.id}) }}">
+        <div class="canard-card">
+            <div class="canard-card-text">
+                <h3>{{ canard.nom }}</h3>
+                <p>Prix : {{ canard.price }} €</p>
+                <p>{{ canard.description }}</p>
+            </div>
+        
+            {% if canard.imageName %}
+            <div class="canard-card-image">
+                <img src="{{ asset('uploads/canards/' ~ canard.imageName) }}" alt="Image de {{ canard.nom }}" width="150">
+            </div>
+            {% endif %}
+        </div>
+    </a>
+    {% else %}
+        <p>Aucun canard trouvé.</p>
+    {% endfor %}
+</div>
+</main>
+{% endblock %}

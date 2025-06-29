@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <main id="galery">
+        {% if app.user %}
+            <div class="container">
+                <a href="{{ path('app_duck_create')}}">Ajouter un canard</a>
+            </div>
+        {% endif %}
+        <div class="container-card">
+            {% for canard in canards %}
+                <a href="{{ path('canard_show', { id: canard.id }) }}">
+                    <div class="card">
+                        {% if canard.imageName %}
+                        <div class="img-canard">
+                            <img src="{{ asset('uploads/canards/' ~ canard.imageName) }}" alt="Image du canard" style="max-width: 300px;">
+                        </div>
+                        {% endif %}
+                        <p><Strong>Nom : </Strong><span>{{ canard.nom }}</span></p>
+                        <p><strong> Prix : </strong><span>{{ canard.price }} €</span></p>
+
+                        <p><strong>Description : </strong><span>{{ canard.description }}</span></p>
+                        <h4>Tags :</h4>
+                            <ul>
+                                {% for tag in canard.tag %}
+                                    <li><span>{{ tag.nom }}</span></li>
+                                {% else %}
+                                    <li>Aucun tag.</li>
+                                {% endfor %}
+                            </ul>
+                        {# <p><strong>Propriétaires : </strong>{{ canard.users|length }} #}
+                        </p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </main>
+    
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <main>
+        <div class="container">
+            <div class="form">
+                {{ form_start(ContactForm) }}
+                    {{form_label(ContactForm.nom)}}
+                    {{form_widget(ContactForm.nom)}}
+                    {{ form_row(ContactForm.email) }}
+                    {{ form_row(ContactForm.message) }}
+                    {{ form_row(ContactForm.submit) }}
+                {{ form_end(ContactForm) }}
+            </div>
+        </div>
+    </main>
+{% endblock %}

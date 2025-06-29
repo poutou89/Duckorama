@@ -1,0 +1,7 @@
+vich_uploader:
+    db_driver: orm
+    mappings:
+        canard_image:
+            uri_prefix: /uploads/canards
+            upload_destination: '%kernel.project_dir%/public/uploads/canards'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

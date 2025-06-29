@@ -1,0 +1,70 @@
+@use "../base/variables" as v;
+
+
+#home {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+            text-align: center;
+            padding: 4vh 0 0 0;
+            span {
+                color: v.$color-thristy;
+            }
+        }
+        p {
+            width: 60%;
+            text-align: center;
+            span {
+                color: v.$color-thristy;
+            }
+        }
+        h3 {
+            span {
+                color: v.$color-thristy;
+            }
+        }
+    }
+    .canards-liste {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        gap: 4vh;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        a {
+            width: 45%;
+            background-color: rgba(v.$color-secondary, 0.6);
+            text-decoration: none;
+            color: v.$color-thristy;
+            border-radius: 12px;
+            box-shadow: 2px 2px 2px rgba(v.$color-secondary, 0.6);
+            transition: all 0.2s;
+            .canard-card {
+                display: flex;
+                justify-content: space-between;
+               
+                .canard-card-text {
+                    padding-left: 4vh;
+                }
+                .canard-card-image {
+                    width: 50%;
+                    height: 50vh;
+                    padding: 2vh;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 12px;
+                    }
+                }
+            }
+        }
+        a:hover {
+            box-shadow: 8px 8px 8px rgba(v.$color-secondary, 0.6);
+            color: v.$color-thristy;
+            background-color: v.$color-secondary;
+        }
+    }
+}

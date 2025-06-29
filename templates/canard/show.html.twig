@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+<main id="unique">
+        <div class="container-canard">
+            <div class="container-img">
+                {% if canard.imageName %}
+                    <img src="{{ asset('uploads/canards/' ~ canard.imageName) }}" alt="Image du canard" style="max-width: 600px;">
+                {% endif %}
+            </div>
+            <div class="container-text">
+                <p>Nom : {{ canard.nom }}</p>
+                <p>Prix : {{ canard.price }}</p>
+                <p>Description : {{ canard.description }}</p>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Commentaires :</h2>
+        </div>
+        <div class="container-commentaire">
+            {% for commentaire in commentaires %}
+            <div class="commentaire">
+                <div class="duck">
+                    <div class="body"><strong>{{ commentaire.user.username }}</strong></div>
+                    <div class="head"></div>
+                    <div class="beak"></div>
+                    <div class="eye"></div>
+                    <div class="bulle"><p>{{ commentaire.contenu }}</p></div>
+                </div>
+            </div>
+            {% else %}
+                <p>Aucun commentaire pour le moment.</p>
+            {% endfor %}
+        </div>
+        
+        <div class="container-form">
+            {% if app.user %}
+                <h3>Ajouter un commentaire :</h3>
+                {{ form_start(commentForm) }}
+                    {{ form_widget(commentForm) }}
+                    <button type="submit">Envoyer</button>
+                {{ form_end(commentForm) }}
+            {% else %}
+                <p><a href="{{ path('app_login') }}">Connectez-vous</a> pour poster un commentaire.</p>
+            {% endif %}
+        </div>
+</main>
+{% endblock %}

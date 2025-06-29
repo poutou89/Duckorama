@@ -1,0 +1,44 @@
+@use "../base/variables" as v;
+
+#connection {
+    .container {
+        background-color: v.$color-secondary;
+        margin-top: 2vh;
+        border-radius: 12px;
+        padding: 2vh;
+        width: 30%;
+        box-shadow: 6px 6px 6px rgba(v.$color-secondary, 0.6);
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h1 {
+                margin: 2vh 0 2vh 0;
+                align-items: center;
+                color: v.$color-thristy;
+            }
+            label {
+                color: v.$color-thristy;
+            }
+            input {
+                margin: 0.8vh 0 2vh 0;
+            }
+            button {
+                margin: 2vh 0;
+                padding: 1vh 1.5vh;
+                border-radius: 8px;
+                background-color: v.$color-thristy;
+                font-size: 16px;
+                font-weight: 600;
+                border: 2px solid v.$color-thristy;
+                color: v.$color-secondary;
+                box-shadow: 2px 2px 2px rgba(v.$color-primary, 0.6);
+                transition: all 0.2s;
+            }
+            button:hover {
+                color: v.$color-thristy;
+                background-color: v.$color-secondary;
+            }
+        }
+    }
+}

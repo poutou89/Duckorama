@@ -1,0 +1,83 @@
+@use "../base/variables" as v;
+
+header {
+    background-color: v.$color-secondary;
+    padding: 3vh;
+    box-shadow: 0px 4px 4px rgb(78, 114, 90);
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        .logo {
+            width: 100px;
+            
+            a {
+                img {
+                    background-color: v.$color-secondary;
+                    width: 100%;
+                }
+            }
+            
+        }
+        nav {
+            width: 80%;
+            ul {
+                display: flex;
+                gap: 20%;
+                align-items: center;
+                justify-content: flex-end;
+                li {
+                    list-style: v.$style-less;
+                    a {
+                        text-decoration: v.$style-less;
+                        color: v.$color-thristy;
+                        font-family: v.$font-titre;
+                        font-size: 32px;
+                        transition: all 0.3s;
+                    }
+                    a:hover {
+                        color: v.$color-primary;
+                    }
+                }
+            }
+            button#burger {
+                display: block !important;
+                background: transparent;
+                border: none;
+                z-index: 1000;
+                    }
+                    
+            button#burger img {
+                width: 32px;
+                height: 32px;
+                    } 
+                }
+            #navLinks {
+                display: none;
+                flex-direction: column;
+                background-color: v.$color-secondary;
+                box-shadow: 4px 4px 4px rgb(78, 114, 90);
+                position: absolute;
+                top: 116px;
+                right: 220px;
+                padding: 1rem;
+                border-radius: 8px;
+                z-index: 1000;
+                border-top-right-radius: 0px;
+                border-top-left-radius: 0px;
+            
+            &.active {
+                display: flex;
+                    }
+                p{
+                    span {
+                        color: v.$color-thristy;
+                    }
+                }
+                    }
+            .menu {
+                display: flex;
+                    }
+                    
+    }
+}

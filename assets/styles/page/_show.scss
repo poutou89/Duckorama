@@ -1,0 +1,123 @@
+@use "../base/variables" as v;
+
+#unique {
+    .container-canard {
+        width: 80%;
+        margin: 4vh auto;
+        display: flex;
+        background-color: v.$color-secondary;
+        border-radius: 16px;
+        box-shadow: 8px 8px 8px rgb(78, 114, 90);
+        .container-img {
+            width: 50%;
+            img {
+                border-top-left-radius: 16px;
+                border-bottom-left-radius: 16px;
+                height: 100%;
+            }
+        }
+        .container-text {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            p {
+                font-size: 32px;
+                color: v.$color-thristy;
+                font-weight: 600;
+            }
+        }
+    }
+    .container {
+        margin-bottom: 16vh;
+    }
+    .container-commentaire {
+        display: flex;
+        gap: 8vh;
+        margin: 4vh auto;
+        position: relative;
+        width: 80%;
+        
+        .duck {
+      position: relative;
+      width: 100px;
+      height: 60px;
+    }
+    
+    .body {
+      background: yellow;
+      width: 120px;
+      height: 70px;
+      border-radius: 50%;
+      strong {
+        position: relative;
+        top: 25px;
+        left: 16px;
+      }
+    }
+    
+    .head {
+      background: yellow;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      position: absolute;
+      top: -40px;
+      left: 70px;
+    }
+    
+    .beak {
+      background: orange;
+      width: 20px;
+      height: 10px;
+      border-radius: 0 50% 50% 0;
+      position: absolute;
+      top: 0px;
+      left: 115px;
+      rotate: 35deg;
+    }
+    
+    .eye {
+      background: black;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      position: absolute;
+      top: -20px;
+      left: 100px;
+    }
+    .bulle {
+        position: absolute;
+        bottom: 110%; /* Place la bulle au-dessus du canard */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        color: black;
+        padding: 8px 12px;
+        border-radius: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        text-align: center;
+        max-width: 150px; /* Limite la largeur max de la bulle */
+        word-wrap: break-word; /* Force le texte à revenir à la ligne si trop long */
+        white-space: normal; /* Important pour casser la ligne si besoin */
+        }
+
+        .bulle::after {
+        content: "";
+        position: absolute;
+        top: 100%; /* Flèche sous la bulle */
+        left: 50%;
+        border-width: 8px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+        }
+    }
+    .container-form {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 80%;
+    }
+}
