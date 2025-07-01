@@ -23,7 +23,9 @@
                 </div>
                 <nav>
                     <ul>
+                        {% if not app.user or 'ROLE_ADMIN' not in app.user.roles %}
                         <li><a href="{{ path('app_accueil')}}">Accueil</a></li>
+                        {% endif %}
                         <li><a href="{{ path('app_galery')}}">Galery</a></li>
                         <li><a href="{{ path('app_contact')}}">Contact</a></li>
                         {% if app.user %}

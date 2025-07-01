@@ -3,11 +3,25 @@
 {% block title %}Hello DuckCreateController!{% endblock %}
 
 {% block main %}
-    <main>
+    <main id="create">
         <div class="container">
             <div class="form">
                 {{form_start(DuckForm)}}
-                    {{form_widget(DuckForm)}}
+                    {{form_label(DuckForm.nom)}}
+                    {{form_widget(DuckForm.nom)}}
+                    {{form_label(DuckForm.price)}}
+                    {{form_widget(DuckForm.price)}}
+                    {{form_label(DuckForm.description)}}
+                    {{form_widget(DuckForm.description)}}
+                    {{form_label(DuckForm.imageFile)}}
+                    {{form_widget(DuckForm.imageFile)}}
+                    <p>Tag</p>
+                    {% for child in DuckForm.tag %}
+                        <div>
+                            {{ form_widget(child) }}
+                            {{ form_label(child) }}
+                        </div>
+                    {% endfor %}
                     <button>Ajouter</button>
                 {{form_end(DuckForm)}}
             </div>

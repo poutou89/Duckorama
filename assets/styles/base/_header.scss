@@ -15,6 +15,12 @@ header {
                 img {
                     background-color: v.$color-secondary;
                     width: 100%;
+                    transition: all 0.4s;
+                }
+                img:hover {
+                    background-color: v.$color-primary;
+                    border-radius: 100%;
+                    box-shadow: 4px 4px 4px rgb(78, 114, 90);
                 }
             }
             
@@ -45,7 +51,14 @@ header {
                 background: transparent;
                 border: none;
                 z-index: 1000;
+                transition: all 0.3s;
+                cursor: pointer;
                     }
+            button#burger:hover {
+                background-color: v.$color-primary;
+                border-radius: 12px;
+                box-shadow: 4px 4px 4px rgb(78, 114, 90);
+            }
                     
             button#burger img {
                 width: 32px;

@@ -23,7 +23,7 @@ final class ContactController extends AbstractController
 
             $email = (new Email())
                 ->from('expediteur@gmail.com')
-                ->to('destinataireàlive.fr')
+                ->to('destinataire@live.fr')
                 ->subject('Nouveau message de contact')
                 ->text(
                     "Nom: {$data['nom']}\n".
@@ -31,7 +31,9 @@ final class ContactController extends AbstractController
                     "Message:\n{$data['message']}"
                 );
                 $mailer->send($email);
-        }
+                $this->addFlash('success', 'Votre message a bien été envoyé !');
+                return $this->redirectToRoute('app_accueil');
+            }
 
         return $this->render('contact/contact.html.twig', [
             'ContactForm' => $form->createView(),

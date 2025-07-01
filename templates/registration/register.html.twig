@@ -5,15 +5,16 @@
 {% block main %}
     <main id="connection">
         <div class="container">
-        <form action="">
             <h1>S'inscrire</h1>
 
-            {{ form_errors(registrationForm) }}
-
             {{ form_start(registrationForm) }}
+                {{ form_errors(registrationForm) }}
             
                 {{ form_row(registrationForm.username, {
                     label: 'Pseudo : '
+                }) }}
+                {{ form_row(registrationForm.email, {
+                    label: 'Email : '
                 }) }}
                 {{ form_row(registrationForm.plainPassword, {
                     label: 'Mot de passe : '
@@ -21,9 +22,7 @@
                 {{ form_row(registrationForm.agreeTerms) }}
 
                 <button type="submit" class="btn">S'inscrire</button>
-            
             {{ form_end(registrationForm) }}
-            </form>
         </div>
     </main>
 {% endblock %}

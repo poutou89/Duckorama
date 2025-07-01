@@ -1,14 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block main %}
-    <main>
+    <main id="contact">
         <div class="container">
+            <h2>Un problème ? un bug ? une simple demande ? Ne rester pas dans votre <span>coin</span>, contactez-nous !</h2>
             <div class="form">
                 {{ form_start(ContactForm) }}
                     {{form_label(ContactForm.nom)}}
                     {{form_widget(ContactForm.nom)}}
-                    {{ form_row(ContactForm.email) }}
-                    {{ form_row(ContactForm.message) }}
+                    {{form_label(ContactForm.email)}}
+                    {{form_widget(ContactForm.email)}}
+                    {{form_label(ContactForm.message)}}
+                    {{form_widget(ContactForm.message)}}
                     {{ form_row(ContactForm.submit) }}
                 {{ form_end(ContactForm) }}
             </div>
