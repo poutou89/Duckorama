@@ -8,15 +8,14 @@
         padding: 2vh;
         width: 30%;
         box-shadow: 6px 6px 6px rgba(v.$color-secondary, 0.6);
+        h1 {
+            text-align: center;
+            color: v.$color-thristy;
+        }
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
-            h1 {
-                margin: 2vh 0 2vh 0;
-                align-items: center;
-                color: v.$color-thristy;
-            }
             label {
                 color: v.$color-thristy;
             }
