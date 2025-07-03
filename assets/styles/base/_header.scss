@@ -37,13 +37,25 @@ header {
                     a {
                         text-decoration: v.$style-less;
                         color: v.$color-thristy;
+                        text-shadow: 2px 1px 0px black;
                         font-family: v.$font-titre;
                         font-size: 32px;
                         transition: all 0.3s;
+                        img {
+                            padding: 0.5vh;
+                            transition: all 0.3s;
+                        }
+                        img:hover {
+                            padding: 0.5vh;
+                            border-radius: 12px;
+                            background-color: v.$color-primary;
+                            box-shadow: 2px 2px 2px rgb(78, 114, 90);
+                        }
                     }
                     a:hover {
                         color: v.$color-primary;
                     }
+
                 }
             }
             button#burger {

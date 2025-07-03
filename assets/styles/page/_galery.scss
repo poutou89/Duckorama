@@ -4,10 +4,7 @@
         .container {
             display: flex;
             justify-content: flex-end;
-            h1 {
-                color: v.$color-thristy;
-                text-align: center;
-            }
+            
             a {
                 text-decoration: v.$style-less;
                 padding: 2vh 1.5vh;
