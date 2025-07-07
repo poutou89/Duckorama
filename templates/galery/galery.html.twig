@@ -26,8 +26,8 @@
                 <div class="add">
                     <a href="{{ path('app_duck_create')}}">Ajouter un canard</a>
                 </div>
-            </div>
         {% endif %}
+            </div>
         <div class="container-card">
             {% for canard in canards %}
                 <a href="{{ path('canard_show', { id: canard.id }) }}">
