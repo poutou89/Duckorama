@@ -3,14 +3,62 @@
     #galery {
         .container {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
+                .form {
+                    width: 50%;
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        background-color: v.$color-secondary;
+                        padding: 1vh;
+                        margin-top: 1vh;
+                        border-radius: 10px;
+                    .tag {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                        .form-check {
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+            }
+                
             
+            label {
+                color: v.$color-thristy;
+            }
+            input {
+                margin: 0.8vh 0 2vh 0;
+            }
+            output {
+                color: v.$color-thristy;
+            }
+            button {
+                margin: 2vh 0;
+                padding: 1vh 1.5vh;
+                border-radius: 8px;
+                background-color: v.$color-thristy;
+                font-size: 16px;
+                font-weight: 600;
+                border: 2px solid v.$color-thristy;
+                color: v.$color-secondary;
+                box-shadow: 2px 2px 2px rgba(v.$color-primary, 0.6);
+                transition: all 0.2s;
+            }
+            button:hover {
+                color: v.$color-thristy;
+                background-color: v.$color-secondary;
+            }
+        }
+        .add {
             a {
                 text-decoration: v.$style-less;
                 padding: 2vh 1.5vh;
                 background-color: v.$color-thristy;
                 border-radius: 12px;
-                margin: 2vh 0 0 0;
+                margin: 8vh 0 0 0;
                 border: 2px solid v.$color-thristy;
                 color: v.$color-secondary;
                 transition: all 0.2s ease-out;
@@ -21,6 +69,8 @@
                 color: v.$color-thristy;
                 box-shadow: 4px 4px 1px rgba(v.$color-secondary, 0.4);
             }
+
+        }
         }
         .container-card {
             width: 80%;
@@ -80,3 +130,4 @@
             
         }
     }
+    

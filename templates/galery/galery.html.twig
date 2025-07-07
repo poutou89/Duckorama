@@ -2,9 +2,30 @@
 
 {% block main %}
     <main id="galery">
-        {% if app.user %}
             <div class="container">
-                <a href="{{ path('app_duck_create')}}">Ajouter un canard</a>
+                <div class="form">
+                    {{ form_start(DuckForm) }}
+                        {{ form_label(DuckForm.price, 'Prix minimum') }}
+                        <output>1</output>
+                        {{ form_widget(DuckForm.price, { attr: { tag: 'tag' } }) }}
+                        <div class="tag">
+                        {{ form_label(DuckForm.tag) }}
+
+                        {% for checkbox in DuckForm.tag %}
+                            <div class="form-check">
+                                {{ form_widget(checkbox) }}
+                                {{ form_label(checkbox) }}
+                            </div>
+                        {% endfor %}
+                        </div>
+                        <button>Filtrer</button>
+                    {{ form_end(DuckForm) }}
+                </div>
+
+        {% if app.user %}
+                <div class="add">
+                    <a href="{{ path('app_duck_create')}}">Ajouter un canard</a>
+                </div>
             </div>
         {% endif %}
         <div class="container-card">

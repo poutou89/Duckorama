@@ -25,6 +25,21 @@ class CanardRepository extends ServiceEntityRepository
         ->getResult();
 }
 
+    public function filterForm(array $tagIds, int $price): array
+{
+    $qb = $this->createQueryBuilder('c')
+        ->where('c.price >= :price')
+        ->setParameter('price', $price);
+
+    if (!empty($tagIds)) {
+        $qb->join('c.tag', 't')
+           ->andWhere('t.id IN (:tagIds)')
+           ->setParameter('tagIds', $tagIds);
+    }
+
+    return $qb->getQuery()->getResult();
+}
+
 //    /**
 //     * @return Canard[] Returns an array of Canard objects
 //     */
