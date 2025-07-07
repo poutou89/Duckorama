@@ -26,7 +26,6 @@ final class GaleryController extends AbstractController
                     $tags[] = $tag->getId();
                 }
 
-                // ✅ Use the custom method, not findBy
                 $canards = $repository->filterForm($tags, $price);
             } else {
                 $canards = $repository->findAll();

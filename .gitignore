@@ -7,7 +7,8 @@
 /public/bundles/
 /var/
 /vendor/
-###< symfony/framework-bundle ###
+!/vendor/easycorp/easyadmin-bundle/templates/page/content.html.twig
+##< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
 /phpunit.xml
