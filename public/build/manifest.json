@@ -4,6 +4,5 @@
   "build/runtime.js": "/build/runtime.js",
   "build/vendors-node_modules_core-js_modules_web_timers_js.js": "/build/vendors-node_modules_core-js_modules_web_timers_js.js",
   "build/fonts/Roboto-Regular.ttf": "/build/fonts/Roboto-Regular.5dd91892.ttf",
-  "build/fonts/FascinateInline-Regular.ttf": "/build/fonts/FascinateInline-Regular.8c324f34.ttf",
-  "build/images/canard.png": "/build/images/canard.07d7bda5.png"
+  "build/fonts/FascinateInline-Regular.ttf": "/build/fonts/FascinateInline-Regular.8c324f34.ttf"
 }
