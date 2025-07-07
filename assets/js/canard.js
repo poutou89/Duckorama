@@ -1,9 +1,8 @@
-import canardImg from '../images/canard.png';
+
+canard.src = document.getElementById('canard');
 
 document.addEventListener('DOMContentLoaded', function() {
-    const canard = document.createElement('img');
     canard.id = 'canard';
-    canard.src = canardImg;
     document.body.appendChild(canard);
 
     function moveCanard() {
