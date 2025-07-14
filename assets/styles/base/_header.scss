@@ -1,108 +1,141 @@
 @use "../base/variables" as v;
 
 header {
-    background-color: v.$color-secondary;
-    padding: 3vh;
-    box-shadow: 0px 4px 4px rgb(78, 114, 90);
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        .logo {
-            width: 100px;
-            
-            a {
-                img {
-                    background-color: v.$color-secondary;
-                    width: 100%;
-                    transition: all 0.4s;
-                }
-                img:hover {
-                    background-color: v.$color-primary;
-                    border-radius: 100%;
-                    box-shadow: 4px 4px 4px rgb(78, 114, 90);
-                }
-            }
-            
-        }
-        nav {
-            width: 80%;
-            ul {
-                display: flex;
-                gap: 20%;
-                align-items: center;
-                justify-content: flex-end;
-                li {
-                    list-style: v.$style-less;
-                    a {
-                        text-decoration: v.$style-less;
-                        color: v.$color-thristy;
-                        text-shadow: 2px 1px 0px black;
-                        font-family: v.$font-titre;
-                        font-size: 32px;
-                        transition: all 0.3s;
-                        img {
-                            padding: 0.5vh;
-                            transition: all 0.3s;
-                        }
-                        img:hover {
-                            padding: 0.5vh;
-                            border-radius: 12px;
-                            background-color: v.$color-primary;
-                            box-shadow: 2px 2px 2px rgb(78, 114, 90);
-                        }
-                    }
-                    a:hover {
-                        color: v.$color-primary;
-                    }
+  background-color: v.$color-secondary;
+  padding: 3vh;
+  box-shadow: 0px 4px 4px rgb(78, 114, 90);
 
-                }
-            }
-            button#burger {
-                display: block !important;
-                background: transparent;
-                border: none;
-                z-index: 1000;
-                transition: all 0.3s;
-                cursor: pointer;
-                    }
-            button#burger:hover {
-                background-color: v.$color-primary;
-                border-radius: 12px;
-                box-shadow: 4px 4px 4px rgb(78, 114, 90);
-            }
-                    
-            button#burger img {
-                width: 32px;
-                height: 32px;
-                    } 
-                }
-            #navLinks {
-                display: none;
-                flex-direction: column;
-                background-color: v.$color-secondary;
-                box-shadow: 4px 4px 4px rgb(78, 114, 90);
-                position: absolute;
-                top: 116px;
-                right: 220px;
-                padding: 1rem;
-                border-radius: 8px;
-                z-index: 1000;
-                border-top-right-radius: 0px;
-                border-top-left-radius: 0px;
-            
-            &.active {
-                display: flex;
-                    }
-                p{
-                    span {
-                        color: v.$color-thristy;
-                    }
-                }
-                    }
-            .menu {
-                display: flex;
-                    }
-                    
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      width: 100px;
+
+      a img {
+        background-color: v.$color-secondary;
+        width: 100%;
+        transition: all 0.4s;
+
+        &:hover {
+          background-color: v.$color-primary;
+          border-radius: 100%;
+          box-shadow: 4px 4px 4px rgb(78, 114, 90);
+        }
+      }
     }
+
+    nav {
+  display: flex;
+  align-items: center;
+  gap: 8vh;
+  .main-nav {
+    display: flex;
+    gap: 10%;
+    list-style: none;
+    margin: 0 4vh 0 0;
+    padding: 0;
+
+    li a {
+      text-decoration: none;
+      color: v.$color-thristy;
+      font-family: v.$font-titre;
+      font-size: 32px;
+      text-shadow: 2px 1px 0 black;
+      transition: color 0.3s;
+
+      &:hover {
+        color: v.$color-primary;
+      }
+    }
+  }
+
+  .menu {
+    margin-left: 20px;
+
+    button#burger {
+      display: block;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: v.$color-primary;
+        border-radius: 12px;
+        box-shadow: 4px 4px 4px rgb(78, 114, 90);
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  #navLinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 130px;
+    right: 8%;
+    background-color: v.$color-secondary;
+    padding: 1rem;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 4px 4px 4px rgb(78, 114, 90);
+    z-index: 999;
+    list-style: none;
+    margin: 0;
+
+    .mobile-only {
+    display: none;
+    }
+
+    li a {
+      text-decoration: none;
+      color: v.$color-thristy;
+      font-family: v.$font-titre;
+      font-size: 32px;
+      text-shadow: 2px 1px 0 black;
+      transition: color 0.3s;
+
+      &:hover {
+        color: v.$color-primary;
+      }
+    }
+
+    
+
+    p span {
+      color: v.$color-thristy;
+    }
+  }
+
+  #navLinks.active {
+    display: flex;
+    align-items: center;
+  }
+
+  // --- Media query mobile ---
+  @media screen and (max-width: 768px) {
+    .main-nav {
+      display: none;
+    }
+
+    #navLinks {
+      display: none;
+      .mobile-only {
+    display: block;
+  }
+    }
+
+    #navLinks.active {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+  }
 }

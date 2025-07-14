@@ -17,38 +17,51 @@
     <body>
         {% block header %}
         <header>
-            <div class="container">
-                <div class="logo">
-                    <a href="{{ path('app_accueil')}}"><img src="{{asset('/images/logo.png')}}" alt=""></a>    
-                </div>
-                <nav>
-                    <ul>
-                        {% if not app.user or 'ROLE_ADMIN' not in app.user.roles %}
-                        <li><a href="{{ path('app_accueil')}}">Accueil</a></li>
-                        {% endif %}
-                        <li><a href="{{ path('app_galery')}}">Galery</a></li>
-                        <li><a href="{{ path('app_contact')}}">Contact</a></li>
-                        {% if app.user %}
-                        <li><a href="{{ path('app_logout')}}"><img src="{{asset('/images/logout-logo.svg')}}" alt="" width="20px"></a></li>
-                            {% if "ROLE_ADMIN" in app.user.roles %}
-                                <li><a href="{{ path('admin')}}">admin</a></li>
-                            {% endif %}
-                        {% else %}
-                        <div class="menu">
-                            <button id="burger" aria-label="Ouvrir le menu">
-                                <img src="{{asset('/images/register-logo.svg')}}" alt="menu">
-                            </button>
-                        </div>
-                        </ul>
-                        <ul id="navLinks">
-                            <li><a href="{{ path('app_login')}}">login</a></li>
-                            <p><span>|</span></p>
-                            <li><a href="{{path('app_register')}}">S'inscrire</a></li>
-                        </ul>
-                        {% endif %}
-                </nav>
+    <div class="container">
+        <div class="logo">
+            <a href="{{ path('app_accueil')}}"><img src="{{asset('/images/logo.png')}}" alt=""></a>    
+        </div>
+        <nav>
+            <ul class="main-nav">
+                {% if not app.user or 'ROLE_ADMIN' not in app.user.roles %}
+                <li><a href="{{ path('app_accueil')}}">Accueil</a></li>
+                {% endif %}
+                <li><a href="{{ path('app_galery')}}">Galery</a></li>
+                <li><a href="{{ path('app_contact')}}">Contact</a></li>
+                {% if app.user %}
+                    <li><a href="{{ path('app_logout')}}"><img src="{{asset('/images/logout-logo.svg')}}" alt="" width="20px"></a></li>
+                    {% if "ROLE_ADMIN" in app.user.roles %}
+                        <li><a href="{{ path('admin')}}">admin</a></li>
+                    {% endif %}
+                {% endif %}
+            </ul>
+
+            <div class="menu">
+                <button id="burger" aria-label="Ouvrir le menu">
+                <img src="{{asset('/images/register-logo.svg')}}" alt="menu">
+                </button>
             </div>
-        </header>
+
+            <ul id="navLinks">
+                {% if not app.user or 'ROLE_ADMIN' not in app.user.roles %}
+                <li class="mobile-only"><a href="{{ path('app_accueil')}}">Accueil</a></li>
+                {% endif %}
+                <li class="mobile-only"><a href="{{ path('app_galery')}}">Galery</a></li>
+                <li class="mobile-only"><a href="{{ path('app_contact')}}">Contact</a></li>
+                {% if app.user %}
+                    <li class="mobile-only"><a href="{{ path('app_logout')}}"><img src="{{asset('/images/logout-logo.svg')}}" alt="" width="20px"></a></li>
+                    {% if "ROLE_ADMIN" in app.user.roles %}
+                        <li class="mobile-only"><a href="{{ path('admin')}}">admin</a></li>
+                    {% endif %}
+                {% else %}
+                    <li><a href="{{ path('app_login')}}">login</a></li>
+                    <p><span>|</span></p>
+                    <li><a href="{{ path('app_register')}}">S'inscrire</a></li>
+                {% endif %}
+            </ul>
+            </nav>
+    </div>
+</header>
         {% endblock %}
         {% block main %}{% endblock %}
         {% block footer %}{% endblock %}
