@@ -37,9 +37,11 @@
             </ul>
 
             <div class="menu">
+            {% if app.user %}
                 <button id="burger" aria-label="Ouvrir le menu">
                 <img src="{{asset('/images/register-logo.svg')}}" alt="menu">
                 </button>
+            {% endif %}
             </div>
 
             <ul id="navLinks">
