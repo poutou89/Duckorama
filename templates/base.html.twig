@@ -37,7 +37,7 @@
             </ul>
 
             <div class="menu">
-            {% if app.user %}
+            {% if not app.user %}
                 <button id="burger" aria-label="Ouvrir le menu">
                 <img src="{{asset('/images/register-logo.svg')}}" alt="menu">
                 </button>
